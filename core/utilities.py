@@ -6,6 +6,11 @@ from core.models import YTData
 
 
 def youtube_api_caller(publishedAfter):
+    '''
+    Function used for calling youtube api with 
+        multiple parameters and returns youtube
+        data
+    '''
 
     developer_key = "AIzaSyCIiyuWIoVwOfUrC4ATEvnWkfjY3DEayig"
     type_of_data = "video"
@@ -22,6 +27,11 @@ def youtube_api_caller(publishedAfter):
     return response.json()
 
 def go_back_10_seconds():
+    '''
+    Function used for getting current date and time
+        then move 10 seconds in the past and return
+        datetime 10 seconds in past
+    '''
 
     current_datetime = datetime.datetime.now()
     ten_seconds_before = current_datetime - datetime.timedelta(seconds=10)
@@ -29,16 +39,28 @@ def go_back_10_seconds():
     return ten_seconds_before
 
 def convert_datetime_to_rfc3339_format(datetime_to_convert):
+    '''
+    Function used for converting datetime object
+        to rfc3339 formated datetime
+    '''
 
     rfc3339_format_datetime = rfc3339.rfc3339(datetime_to_convert)
 
     return rfc3339_format_datetime
 
 def get_datetime_format_for_yt_api(raw_datetime):
+    '''
+    Function used for getting datetime
+        as per youtube api requirement
+    '''
 
     return raw_datetime[:-6]+"Z"
 
 def save_item_data_to_db(item):
+    '''
+    Function used for saving specific data 
+        as per requirement in database
+    '''
 
     title = item["snippet"]["title"]
     description = item["snippet"]["description"]

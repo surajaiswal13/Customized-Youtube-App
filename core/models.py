@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 
 class YTData(models.Model):
+    '''
+    Model for Saving youtube data to db
+    '''
 
     title = models.CharField(max_length=150)
     description = models.CharField(max_length=200)

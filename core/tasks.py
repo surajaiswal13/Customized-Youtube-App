@@ -6,6 +6,10 @@ from .utilities import youtube_api_caller, go_back_10_seconds, \
 
 @shared_task
 def update_youtube_data():
+    '''
+    Task for Updating database with new youtube 
+        data from youtube api
+    '''
 
     datetime_to_convert = go_back_10_seconds()
     rfc3339_datetime_format = convert_datetime_to_rfc3339_format(datetime_to_convert)
