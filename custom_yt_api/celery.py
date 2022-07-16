@@ -16,3 +16,9 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 # Load task modules from all registered Django apps.
 app.autodiscover_tasks()
 
+app.conf.beat_schedule = {
+    'call_youtube_api': {
+        'task': 'core.tasks.update_youtube_data',
+        'schedule': 10
+    },
+}
