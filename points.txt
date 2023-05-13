@@ -1,0 +1,15 @@
+Done:
+
+Code is broken down to easy-to-read functions with docstring
+PEP8 followed.
+Nice Readme
+
+Todo:
+
+No indexes used on appropriate fields
+Unique videoID from Youtube is not stored.
+Youtube API pagination not handled
+update_youtube_data task's pubishedAfter datetime not considering it from DB, this will fetch the same videos again and again
+Youtube API keys rotation not handled
+Avoid Hardcoding of Youtube keys
+Each card has a loading state instead of one when the API is loading
