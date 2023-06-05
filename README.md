@@ -1,4 +1,4 @@
-# Customized Youtube backend Using Youtube api
+# Customized Youtube backend Using Youtube api.
 
 Customized Youtube for specific queries, it also keeps getting updated asynchronously
 
