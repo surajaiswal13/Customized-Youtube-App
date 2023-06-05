@@ -1,8 +1,14 @@
 import requests
 import datetime
 import rfc3339
+import environ
 
 from core.models import YTData
+
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 
 def youtube_api_caller(publishedAfter):
@@ -12,7 +18,7 @@ def youtube_api_caller(publishedAfter):
         data
     '''
 
-    developer_key = "AIzaSyCIiyuWIoVwOfUrC4ATEvnWkfjY3DEayig"
+    developer_key = env("YT_API_KEY")
     type_of_data = "video"
     order = "date"
     q = "football"

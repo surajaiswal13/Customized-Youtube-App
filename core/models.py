@@ -13,3 +13,9 @@ class YTData(models.Model):
     thumbnail_url_default = models.URLField(max_length=100)
     thumbnail_url_medium = models.URLField(max_length=100)
     thumbnail_url_high = models.URLField(max_length=100)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['published_at']),
+            models.Index(fields=['title'])
+        ]
